@@ -21,7 +21,7 @@
 
 <h4 align="center">
   <a href="" target='_blank'>[Project Page]</a> •
-  <a href="https://arxiv.org/abs/2207.06580" target='_blank'>[arXiv]</a>
+  <a href="https://arxiv.org/abs/2207.08184" target='_blank'>[arXiv]</a>
 </h4>
 <table>
 <tr>
