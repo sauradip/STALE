@@ -1,3 +1,6 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/zero-shot-temporal-action-detection-via/zero-shot-action-detection-on-activitynet-1-3)](https://paperswithcode.com/sota/zero-shot-action-detection-on-activitynet-1-3?p=zero-shot-temporal-action-detection-via)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/zero-shot-temporal-action-detection-via/zero-shot-action-detection-on-thumos-14)](https://paperswithcode.com/sota/zero-shot-action-detection-on-thumos-14?p=zero-shot-temporal-action-detection-via)
+
 <div align="center">
 
 <h1>Zero-Shot Temporal Action Detection via Vision-Language Prompting</h1>
