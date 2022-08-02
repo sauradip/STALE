@@ -28,7 +28,7 @@
 </h4>
 <table>
 <tr>
-    <td><img src="assets/ECCV22_CLIP_fig1.png" width="100%"/></td>
+    <td><img src="assets/STALE_intro.gif" width="100%"/></td>
 </tr>
 </table>
 
