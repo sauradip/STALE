@@ -36,7 +36,7 @@ class STALEDataset(data.Dataset):
         self.feature_path = config['training']['feature_path']
         self.video_info_path = config['dataset']['training']['video_info_path']
         self.video_anno_path = config['dataset']['training']['video_anno_path']
-        self.sample_count = config['dataset']['training']['sample_count']
+        self.num_frame = config['dataset']['training']['num_frame']
         self.split = config['dataset']['split']
         self.num_classes = int((self.split * (config['dataset']['num_classes']))/100)
         # self.num_classes = 150
@@ -110,7 +110,7 @@ class STALEDataset(data.Dataset):
             if subset in subset_vid:
                 for j in range(len(labels)):
                     tmp_info = labels[j]
-                    clip_factor = self.temporal_scale / ( corr_sec * (self.sample_count+1) )
+                    clip_factor = self.temporal_scale / ( corr_sec * (self.num_frame+1) )
                     action_start = tmp_info['segment'][0]*clip_factor
                     snip_start = max(min(1, tmp_info['segment'][0] / corr_sec), 0)
                     action_end = tmp_info['segment'][1]*clip_factor
