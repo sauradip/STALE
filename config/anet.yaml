@@ -1,0 +1,86 @@
+dataset:
+  num_classes: 200
+  split: 75
+  training:
+    video_info_path: "./data/activitynet_annotations/video_info_new.csv"
+    video_anno_path: "./data/activitynet_annotations/anet_anno_action.json"
+    num_frame: 5
+    output_path: '/path/to/output/'
+    
+  testing:
+    video_info_path: "./data/activitynet_annotations/video_info_new.csv"
+    video_anno_path: "./data/activitynet_annotations/anet_anno_action.json"
+    num_frame: 5
+    output_path: '/path/to/output/'
+
+model:
+  embedding_head: 4
+  # feat_dim: 2048
+  feat_dim: 512
+  temporal_scale: 100
+  clip_pretrain: "O" ## K : KInetics , O : openAI
+
+training:
+  batch_size: 100
+  learning_rate: 0.00004
+  weight_decay: 0.02
+  max_epoch: 5
+  checkpoint_path: '/path/to/output/'
+  random_seed: 1
+  step: 10
+  gamma: 0.3
+  feature_path: "/path/to/feature/"
+  num_gpu: 1
+
+loss:
+  lambda_1: 0.6
+  lambda_2: 0.4
+
+fewshot:
+  shot: 0 ## > 0 is few-shot ;  = 0 is zero-shot 
+  mode: 1 # 1 : base-training 2 : meta-training 3 : meta-testing 4 : no meta-training/ vanilla few-shot
+  trimmed: 0 # 0 : untrimmed 1 : trimmed
+  episode: 1000
+  num_base: 180
+  num_test: 20
+  ismulti : 1 # 0 : single-instance 1 : multi-instance
+  num_way : 4
+  meta_class : 1 ## 1: meta-learn classifier 0: vanilla few-shot w/o meta-learning
+  meta_mask : 0 ## 1: meta-learn mask 0: vanilla few-shot w/o meta-learning
+  trim_support : 1
+  num_context : 20
+
+testing:
+  cls_thresh: 0.01
+  mask_thresh: [0,0.2,0.4,0.6,0.8]
+  class_thresh: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+  top_k_snip: 10
+  top_k: 500
+  nms_thresh: 0.6
+
+pretraining:
+  video_transformer: "/path/to/ckpt"
+  isPretrain : 0 # 0 : Finetune , 1 : Pretrain
+  video_path: "/path/to/video"
+  raw_video: "/path/to/raw/video"
+  clip_length: 768
+  clip_stride: 8
+  emb_dim: 512
+
+demo:
+  generated_feat_dir: "/path/to/feature"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
