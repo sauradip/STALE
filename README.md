@@ -94,7 +94,7 @@ Follow the [Installation](https://github.com/facebookresearch/MaskFormer/blob/ma
 ### Download Features
 Download the video features and update the Video paths/output paths in ``` config/anet.yaml ``` file. For now ActivityNetv1.3 dataset config is available. We are planning to release the code for THUMOS14 dataset soon. 
 
-| Dataset | Feature | Pre-Training | Link | 
+| Dataset | Feature Backbone | Pre-Training | Link | 
 |:---:|:---:|:---:|:---:|
 | ActivityNet | ViT-B/16-CLIP | CLIP | [Google Drive](https://drive.google.com/drive/folders/1OFyU7V-VPHYOkTfXTQR-XxLYO-rSgL_i?usp=sharing) |
 | THUMOS | ViT-B/16-CLIP | CLIP | [Google Drive](https://drive.google.com/drive/folders/16eUrTrF8-S5ncb5psIN7ikP9GweAIP_t?usp=sharing) |
