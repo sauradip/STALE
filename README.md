@@ -63,16 +63,86 @@ video benchmarks show that our STALE significantly outperforms stateof-the-art a
 supervised TAD over recent strong competitors. 
 
 ## Architecture
-![](assets/main-fig.png)
+![](assets/main-fig-2.png)
+
 
 
 ## Getting Started
 
-### Environment
+### Requirements
 - Python 3.7
-- PyTorch == 1.4.0 **(Please make sure your pytorch version is 1.4)**
+- PyTorch == 1.9.0  **(Please make sure your pytorch version is atleast 1.8)**
 - NVIDIA GPU
+- Hugging-Face Transformers
+- Detectron
 
+### Environment Setup
+It is suggested to create a Conda environment and install the following requirements
+```shell script
+pip3 install -r requirements.txt
+```
+
+### Extra Dependencies
+We have used the implementation of [Maskformer](https://github.com/facebookresearch/MaskFormer) for Representation Masking. 
+```shell script
+git clone https://github.com/sauradip/STALE.git
+cd STALE
+git clone https://github.com/facebookresearch/MaskFormer
+```
+Follow the [Installation](https://github.com/facebookresearch/MaskFormer/blob/main/INSTALL.md) instructions to install Detectron and other modules within this same environment if possible. After this step, place the files in ``` /STALE/extra_files ``` into ``` /STALE/MaskFormer/mask_former/modeling/transformer/ ```. 
+
+### Download Features
+Download the video features and update the Video paths/output paths in ``` config/anet.yaml ``` file. For now ActivityNetv1.3 dataset config is available. We are planning to release the code for THUMOS14 dataset soon. 
+
+| Dataset | Feature | Pre-Training | Link | 
+|:---:|:---:|:---:|:---:|
+| ActivityNet | ViT-B/16-CLIP | CLIP | [Google Drive](https://drive.google.com/drive/folders/1OFyU7V-VPHYOkTfXTQR-XxLYO-rSgL_i?usp=sharing) |
+| THUMOS | ViT-B/16-CLIP | CLIP | [Google Drive](https://drive.google.com/drive/folders/16eUrTrF8-S5ncb5psIN7ikP9GweAIP_t?usp=sharing) |
+| ActivityNet | I3D | Kinetics-400 | [Google Drive](https://drive.google.com/drive/folders/1B1srfie2UWKwaC4-7bo6UItmJoESCUq3?usp=sharing) |
+| THUMOS | I3D | Kinetics-400 | [Google Drive](https://drive.google.com/drive/folders/1C4YG01X9IIT1a568wMM8fgm4k4xTC2EQ?usp=sharing) |
+
+### Training Splits
+Currently we support the training-splits provided by [EfficientPrompt](https://github.com/ju-chen/Efficient-Prompt) paper. Both 50% and 75% labeled data split is available for training. This can be found in ``` STALE/splits ``` 
+
+### Model Training 
+To train STALE from scratch run the following command. The training configurations can be adjusted from  ``` config/anet.yaml ``` file.
+```shell script
+python stale_train.py
+```
+### Model Inference
+We provide the pretrained models containing the checkpoints for both 50% and 75% labeled data split for zero-shot setting
+| Dataset | Split (Seen-Unseen) | Feature | Link | 
+|:---:|:---:|:---:|:---:|
+| ActivityNet | 50%-50% | CLIP | [ckpt](https://drive.google.com/file/d/1DdJYl77YkRbU9DDczvX0ojCG_tqnBr6U/view?usp=sharing) |
+| ActivityNet | 75%-25% | CLIP | [ckpt](https://drive.google.com/drive/folders/16eUrTrF8-S5ncb5psIN7ikP9GweAIP_t?usp=sharing) |
+
+After downloading the checkpoints, the checkpoints path can be saved in ``` config/anet.yaml ``` file.
+The model inference can be then performed using the following command 
+```shell script
+python stale_inference.py
+```
+### Model Evaluation
+To evaluate our STALE model run the following command. 
+```shell script
+python eval.py
+```
+### TO-DO Checklist
+- [ ] Fix the learnable-prompt issue in Huggig-Face Transformer
+- [ ] Fix the NaN bug during Model-Training
+- [ ] Support for THUMOS14 dataset
+- [ ] Enable multi-gpu training
+
+## Citation
+If you find this project useful for your research, please use the following BibTeX entry.
+```
+@article{nag2022zero,
+  title={Zero-shot temporal action detection via vision-language prompting},
+  author={Nag, Sauradip and Zhu, Xiatian and Song, Yi-Zhe and Xiang, Tao},
+  journal={arXiv e-prints},
+  pages={arXiv--2207},
+  year={2022}
+}
+```
 
 
 
