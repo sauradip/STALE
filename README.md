@@ -132,6 +132,8 @@ python eval.py
 - [ ] Support for THUMOS14 dataset
 - [ ] Enable multi-gpu training
 
+### Acknowledgement
+Our source code is based on implementations of [DenseCLIP](https://github.com/raoyongming/DenseCLIP), [MaskFormer](https://github.com/facebookresearch/MaskFormer) and [CoOP](https://github.com/kaiyangzhou/coop). We thank the authors for open-sourcing their code. 
 ## Citation
 If you find this project useful for your research, please use the following BibTeX entry.
 ```
