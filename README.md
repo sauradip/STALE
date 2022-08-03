@@ -22,10 +22,11 @@
 
 <h3><strong>Accepted to <a href='https://eccv2022.ecva.net/' target='_blank'>ECCV 2022</a></strong></h3>
 
-<h4 align="center">
-  <a href="" target='_blank'>[Project Page]</a> •
-  <a href="https://arxiv.org/abs/2207.08184" target='_blank'>[arXiv]</a>
-</h4>
+<h3 align="center">
+  <a href="https://arxiv.org/abs/2207.08184" target='_blank'>Paper</a> |
+  <a href="" target='_blank'>Project Page</a> 
+</h3>
+
 <table>
 <tr>
     <td><img src="assets/STALE_intro.gif" width="100%"/></td>
