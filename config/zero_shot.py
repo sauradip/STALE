@@ -4,9 +4,9 @@
 split_t1_train = [] ## 75:25 split
 split_t1_test = [] ## 75:25 split
 
-with open('/home/phd/Desktop/sauradip_research/TAL/CLIP-TAL/CLIPGSM/GSMv4/splits/train_75_test_25/ActivityNet/train/split_0.list', 'r') as filehandle:
+with open('splits/train_75_test_25/ActivityNet/train/split_0.list', 'r') as filehandle:
     filecontents = filehandle.readlines()
-with open('/home/phd/Desktop/sauradip_research/TAL/CLIP-TAL/CLIPGSM/GSMv4/splits/train_75_test_25/ActivityNet/test/split_0.list', 'r') as filehandle:
+with open('splits/train_75_test_25/ActivityNet/test/split_0.list', 'r') as filehandle:
     filecontents1 = filehandle.readlines()
 
 for files in filecontents:
@@ -25,9 +25,9 @@ for files1 in filecontents1:
 split_t2_train = [] ## 50:50 split
 split_t2_test = [] ## 50:50 split
 
-with open('/home/phd/Desktop/sauradip_research/TAL/CLIP-TAL/CLIPGSM/GSMv4/splits/train_50_test_50/ActivityNet/train/split_0.list', 'r') as filehandle:
+with open('splits/train_50_test_50/ActivityNet/train/split_0.list', 'r') as filehandle:
     filecontents2 = filehandle.readlines()
-with open('/home/phd/Desktop/sauradip_research/TAL/CLIP-TAL/CLIPGSM/GSMv4/splits/train_50_test_50/ActivityNet/test/split_0.list', 'r') as filehandle:
+with open('splits/train_50_test_50/ActivityNet/test/split_0.list', 'r') as filehandle:
     filecontents3 = filehandle.readlines()
 
 for files2 in filecontents2:
