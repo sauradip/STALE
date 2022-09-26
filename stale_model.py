@@ -33,7 +33,7 @@ class STALE(nn.Module):
         self.embedding = SnippetEmbedding(self.n_heads, self.len_feat, self.len_feat, self.len_feat, dropout=0.2)
         self.cross_att = SnippetEmbedding(self.n_heads, 512, 512, 512, dropout=0.3)
         self.context_length = 30
-        self.txt_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
+        self.txt_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32").float()
         self.tokenizer = CLIPTokenizer.from_pretrained("openai/clip-vit-base-patch32")
         self.nshot = config['fewshot']['shot']
         self.cl_names = list(activity_dict.keys())
