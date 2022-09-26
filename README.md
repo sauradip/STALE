@@ -129,9 +129,9 @@ python eval.py
 ```
 ### TO-DO Checklist
 - [ ] Fix the learnable-prompt issue in Huggig-Face Transformer
-- [ ] Fix the NaN bug during Model-Training
+- [x] Fix the NaN bug during Model-Training
 - [ ] Support for THUMOS14 dataset
-- [ ] Enable multi-gpu training
+- [x] Enable multi-gpu training
 
 ### Acknowledgement
 Our source code is based on implementations of [DenseCLIP](https://github.com/raoyongming/DenseCLIP), [MaskFormer](https://github.com/facebookresearch/MaskFormer) and [CoOP](https://github.com/kaiyangzhou/coop). We thank the authors for open-sourcing their code. 
