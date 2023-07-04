@@ -114,8 +114,8 @@ python stale_train.py
 We provide the pretrained models containing the checkpoints for both 50% and 75% labeled data split for zero-shot setting
 | Dataset | Split (Seen-Unseen) | Feature | Link | 
 |:---:|:---:|:---:|:---:|
-| ActivityNet | 50%-50% | CLIP | [ckpt](https://drive.google.com/file/d/1DdJYl77YkRbU9DDczvX0ojCG_tqnBr6U/view?usp=sharing) |
-| ActivityNet | 75%-25% | CLIP | [ckpt](https://drive.google.com/drive/folders/16eUrTrF8-S5ncb5psIN7ikP9GweAIP_t?usp=sharing) |
+| ActivityNet | 50%-50% | CLIP | [ckpt](https://drive.google.com/file/d/1UmgUV80XINOqKVk-uuF6JcENN6_wb_2f/view?usp=sharing) |
+| ActivityNet | 75%-25% | CLIP | [ckpt](https://drive.google.com/file/d/1DdJYl77YkRbU9DDczvX0ojCG_tqnBr6U/view?usp=sharing) |
 
 After downloading the checkpoints, the checkpoints path can be saved in ``` config/anet.yaml ``` file.
 The model inference can be then performed using the following command 
