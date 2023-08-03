@@ -40,7 +40,7 @@ class STALE(nn.Module):
         self.delta = 0
         # self.act_prompt = self.get_prompt()
         self.bg_embeddings = nn.Parameter(
-            torch.empty(1, 512)
+            torch.rand(1, 512)
         )
         self.proj = nn.Sequential(
             nn.Conv1d(2048, 512, kernel_size=3, padding=1),
